@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1f1f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: auto;
+    font-size: 30px;
+    flex-direction: column;
+}
+
+main {
+    border: 1px solid white;
+    padding: 50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    box-shadow: 2px 2px 20px #c3c3c3c3, -2px -2px 20px #c3c3c3c3;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+label {
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.tarefas {
+    color: white;
+    text-align: center;
+}
+
+.entrada section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+ul {
+    color: white;
+    list-style-type: none;
+    border: 1px solid white;
+    border-radius: 2%;
+}
+
+button {
+    background-color: white;
+    border-radius: 5px;
+
+}
+
+footer {
+    color: white;
+    padding-top: 100px;
+}
