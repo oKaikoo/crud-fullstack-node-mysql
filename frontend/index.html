@@ -24,84 +24,14 @@
                 <div id="editar"></div>
                 <ul id="resultados"></ul>
             </section>
+            <div class="button_logout">
+            <button onclick="logout()">Sair</button>
+            </div>
 
     </main>
 
-    <script>
-        function salvarDados() {
-            let entrada = document.getElementById('entrada').value;
-            if (!entrada.trim()) {
-                alert("Digite uma tarefa");
-                return;
-                }
-            fetch("http://localhost:3001/tarefas", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ texto: entrada })
-            })
-            .then(() => {
-                document.getElementById('entrada').value = "";
-                mostrar();
-            });
-        }
+    <script src="./js/main.js"></script>
 
-        function mostrar() {
-            fetch("http://localhost:3001/tarefas", {
-                method: "GET"
-            })
-            .then(res => res.json())
-            .then(data => {
-                let listaDeTarefas = data;
-
-            let ul = document.getElementById('resultados');
-            let html = "";
-
-            listaDeTarefas.forEach((elemento) => {
-                html += `<li>${elemento.texto} <button onclick="editar(${elemento.id})">Editar</button><button onclick="deletar(${elemento.id})">Deletar</button></li>`;
-            });
-            ul.innerHTML = html;
-            });
-        }
-
-        function editar(id) {
-            let html =  `<input type="text" id="textoparaeditar"><button onclick="editarDados(${id})">Salvar</button>`;
-                let divEditar = document.getElementById('editar');
-                divEditar.innerHTML = html;
-        }
-
-        function editarDados(id) {
-            let textoParaEditar = document.getElementById('textoparaeditar').value;
-                if (!textoParaEditar.trim()) {
-                    alert("A tarefa não pode ficar vazia!");
-                    return;
-                    }
-            fetch(`http://localhost:3001/tarefas/${id}`, {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ texto: textoParaEditar })
-            })
-            .then(() => {
-                mostrar();
-                document.getElementById('editar').innerHTML = "";
-            });
-        }
-
-        function deletar(id) {
-            fetch(`http://localhost:3001/tarefas/${id}`, {
-                method: "DELETE"
-            })
-            .then(() => mostrar());
-            document.getElementById('editar').innerHTML = "";
-        }
-
-        mostrar();
-        
-    </script>
-    
     <footer>
         <div class="rodape">
             copyright &copy; Caio Fernandes

@@ -5,7 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: auto;
+    margin: 0;
     font-size: 30px;
     flex-direction: column;
 }
@@ -14,8 +14,14 @@ main {
     border: 1px solid white;
     padding: 50px;
     padding-top: 0px;
-    padding-bottom: 0px;
+    padding-bottom: 20px;
     box-shadow: 2px 2px 20px #c3c3c3c3, -2px -2px 20px #c3c3c3c3;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    width: 700px;
+    max-width: 90%;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -46,15 +52,62 @@ ul {
     list-style-type: none;
     border: 1px solid white;
     border-radius: 2%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 0;
+    height: 200px;
+    overflow-y: auto;
+}
+
+li {
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+li span {
+    flex: 1;
+    min-width: 0;
+    display: block;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+}
+
+li div {
+    display: flex;
+    gap: 5px;
+    flex-shrink: 0;
 }
 
 button {
     background-color: white;
     border-radius: 5px;
+    padding: 6px 14px;
+    font-size: 14px;
+}
 
+.inputs {
+    padding: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.button_logout {
+    text-align: right;
+    margin-top: 20px;
 }
 
 footer {
     color: white;
     padding-top: 100px;
 }
+
