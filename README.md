@@ -20,10 +20,17 @@ Projeto de CRUD completo desenvolvido para praticar integração entre frontend 
 
 ## Rotas da API
 
-- `GET /tarefas` → lista todas as tarefas  
-- `POST /tarefas` → cria uma nova tarefa  
-- `PUT /tarefas/:id` → atualiza uma tarefa  
-- `DELETE /tarefas/:id` → remove uma tarefa  
+### Autenticação
+
+- `POST /register` → cria usuário
+- `POST /login` → autentica e retorna token
+
+### Tarefas (protegidas)
+
+- `GET /tarefas` → lista tarefas do usuário  
+- `POST /tarefas` → cria tarefa
+- `PUT /tarefas/:id` → atualiza tarefa  
+- `DELETE /tarefas/:id` → remove tarefa  
 
 ## Como rodar o projeto
 
@@ -38,6 +45,7 @@ node server.js
 Servidor rodando em:
 http://localhost:3001
 
+Copie o arquivo .env.example e renomeie para .env, preenchendo os valores.
 
 ### Frontend
 
@@ -49,15 +57,25 @@ frontend/index.html
 
 ## Aprendizados
 
+- Autenticação com JWT
+- Proteção de rotas no backend
+- Hash de senha com bcrypt
 - Integração entre frontend e backend
 - Consumo de API com fetch
-- Operações CRUD completas
-- Uso de banco de dados MySQL
+- CRUD completo com MySQL
+- Organização de API REST
 
 
 ## Preview
 
-![Preview do projeto](./preview.png)
+### Login
+![Login](./assets/login-screen.png)
+
+### Sem tarefas
+![Sem tarefas](./assets/empty-state.png)
+
+### Com tarefas
+![Com tarefas](./assets/tasks-with-scroll.png)
 
 
 ## Autor
