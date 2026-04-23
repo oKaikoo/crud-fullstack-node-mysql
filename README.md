@@ -1,6 +1,6 @@
 # CRUD Full Stack - Node.js + MySQL
 
-Projeto de CRUD completo desenvolvido para praticar integração entre frontend e backend.
+Projeto full stack com autenticação de usuários e CRUD de tarefas, onde cada usuário acessa apenas seus próprios dados.
 
 ## Tecnologias utilizadas
 
@@ -10,11 +10,17 @@ Projeto de CRUD completo desenvolvido para praticar integração entre frontend 
 - Node.js
 - Express
 - MySQL
+- JWT (autenticação)
+- Bcrypt (criptografia de senha)
 
 ## Funcionalidades
 
--  Criar tarefas
--  Listar tarefas
+-  Registro de usuário
+-  Login com autenticação
+-  Geração de token JWT
+-  Proteção de rotas com middleware
+-  Criar tarefas (por usuário)
+-  Listar tarefas (somente do usuário logado)
 -  Editar tarefas
 -  Deletar tarefas
 
