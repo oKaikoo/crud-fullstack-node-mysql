@@ -1,6 +1,6 @@
 # CRUD Full Stack - Node.js + MySQL
 
-Projeto full stack com autenticação de usuários e CRUD de tarefas, onde cada usuário acessa apenas seus próprios dados.
+Aplicação full stack de gerenciamento de tarefas com autenticação JWT e sistema multiusuário, desenvolvida com Node.js, Express e MySQL. Cada usuário possui acesso apenas às próprias tarefas, com rotas protegidas e persistência em banco de dados.
 
 ## Tecnologias utilizadas
 
@@ -38,6 +38,41 @@ Projeto full stack com autenticação de usuários e CRUD de tarefas, onde cada 
 - `PUT /tarefas/:id` → atualiza tarefa  
 - `DELETE /tarefas/:id` → remove tarefa  
 
+## Deploy
+
+- Frontend: https://crud-fullstack-node-mysql.vercel.app
+- Backend: https://crud-fullstack-node-mysql.onrender.com
+
+## Estrutura do projeto
+
+```bash
+frontend/
+ ├── index.html
+ ├── login.html
+ ├── login.js
+ ├── style.css
+
+backend/
+ ├── middleware/
+ │    └── auth.js
+ ├── server.js
+ ├── package.json
+ └── .env
+```
+
+## Variáveis de ambiente
+
+Crie um arquivo `.env` dentro da pasta `backend/` com:
+
+```env
+JWT_SECRET=seu_segredo_jwt
+DB_HOST=seu_host_mysql
+DB_USER=seu_usuario_mysql
+DB_PASSWORD=sua_senha_mysql
+DB_NAME=nome_do_banco
+DB_PORT=3306
+```
+
 ## Como rodar o projeto
 
 ### Backend
@@ -57,8 +92,8 @@ Copie o arquivo .env.example e renomeie para .env, preenchendo os valores.
 
 Abra o arquivo:
 
-frontend/index.html
-(ou use Live Server)
+Abra o arquivo `frontend/index.html`
+ou utilize uma extensão como Live Server.
 
 
 ## Aprendizados
