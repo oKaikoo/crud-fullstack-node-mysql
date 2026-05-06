@@ -12,7 +12,7 @@ function salvarDados() {
   }
   const token = localStorage.getItem("token");
 
-  fetch("http://localhost:3001/tarefas", {
+  fetch("https://crud-fullstack-node-mysql.onrender.com/tarefas", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -28,7 +28,7 @@ function salvarDados() {
 function mostrar() {
   const token = localStorage.getItem("token");
 
-  fetch("http://localhost:3001/tarefas", {
+  fetch("https://crud-fullstack-node-mysql.onrender.com/tarefas", {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -63,7 +63,7 @@ function editarDados(id) {
 
   const token = localStorage.getItem("token");
 
-  fetch(`http://localhost:3001/tarefas/${id}`, {
+  fetch(`https://crud-fullstack-node-mysql.onrender.com/tarefas/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -79,7 +79,7 @@ function editarDados(id) {
 function deletar(id) {
   const token = localStorage.getItem("token");
 
-  fetch(`http://localhost:3001/tarefas/${id}`, {
+  fetch(`https://crud-fullstack-node-mysql.onrender.com/tarefas/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,

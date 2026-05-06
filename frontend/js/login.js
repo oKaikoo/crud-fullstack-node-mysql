@@ -7,7 +7,7 @@ async function login() {
   const msg = document.getElementById("msg");
 
   try {
-    const response = await fetch("http://localhost:3001/login", {
+    const response = await fetch("https://crud-fullstack-node-mysql.onrender.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,7 +38,7 @@ async function register() {
   const email = document.getElementById("email").value;
   const senha = document.getElementById("senha").value;
 
-  await fetch("http://localhost:3001/register", {
+  await fetch("https://crud-fullstack-node-mysql.onrender.com/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
